@@ -1,0 +1,2 @@
+
+export { settings } from './apiVariables';
