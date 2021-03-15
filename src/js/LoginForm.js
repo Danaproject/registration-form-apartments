@@ -29,7 +29,7 @@ class LoginForm {
       const result = await rawResult.json();
       clientStorage.setItem('session', result);
       this.form.reset();
-      window.location = '/';
+      window.location = './';
     } catch (error) {
       console.error(error);
       alert({

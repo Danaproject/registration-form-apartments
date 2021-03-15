@@ -28,7 +28,7 @@ class RegisterForm {
       const result = await rawResult.json();
       clientStorage.setItem('session', result);
       this.form.reset();
-      window.location = '/';
+      window.location = './';
     } catch (error) {
       console.log(error);
       alert({
