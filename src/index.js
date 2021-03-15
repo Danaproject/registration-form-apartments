@@ -13,8 +13,10 @@ const renderApartments = async () => {
 const session = clientStorage.getItem('session');
 
 if (!session?.token) {
+  console.log(window.location);
   window.location = './login.html';
 } else {
+  console.log(window.location);
   renderApartments();
 }
 
