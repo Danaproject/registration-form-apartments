@@ -13,7 +13,7 @@ const renderApartments = async () => {
 const session = clientStorage.getItem('session');
 
 if (!session?.token) {
-  window.location = '/login.html';
+  window.location = './login.html';
 } else {
   renderApartments();
 }
@@ -21,5 +21,5 @@ if (!session?.token) {
 const logOutBtnRef = document.querySelector('button[data-action="log-out"]');
 logOutBtnRef.addEventListener('click', () => {
   localStorage.removeItem('session');
-  window.location = '/login.html';
+  window.location = './login.html';
 });
