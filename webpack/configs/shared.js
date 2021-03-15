@@ -2,6 +2,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const paths = require('../utils/paths');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = env => ({
   mode: env.mode,
@@ -75,5 +76,19 @@ module.exports = env => ({
     new CleanWebpackPlugin(),
     new FriendlyErrorsWebpackPlugin(),
     new WebpackBar(),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './registration.html',
+      filename: 'registration.html',
+      chunks: ['registration'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './login.html',
+      filename: 'login.html',
+      chunks: ['login'],
+    }),
   ],
 });
